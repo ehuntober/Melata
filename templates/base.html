@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ {% block title %}   <title>Melata</title> {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}" />
+</head>
+<body>
+    <!-- nav bar-->
+    <nav class="navbar">
+        <ul>
+            <li class="navbar-logo">Melata</li>
+            <li class="navbar-toggle">=</li>
+            {% if current_user.is_authenticated %}
+            <li class="navbar-links"><a href="#">profile</a></li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <li class="navbar-links"><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+            {% endif %}
+
+            {% if not current_user.is_authenticated %}
+            <li class="navbar-links"><a href="{{ url_for('main.index') }}">Home</a></li>
+            <li class="navbar-links"><a href="{{ url_for('auth.signup') }}">Signup</a></li>
+            <li class="navbar-links"><a href="{{ url_for('auth.login') }}">Login</a></li>
+            <li class="navbar-links"><a href="#">Contact</a></li>
+            <li class="navbar-links"><a href="#">About</a></li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <li class="navbar-links"><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% endif %}
+
+         
+
+            
+        </ul>
+    </nav>
+
+    {% block content %} 
+
+
+    {% endblock content %}
+    <footer>
+        <span>&copy 2022 Melata - URL Shortner &NonBreakingSpace;</span>
+        
+        <div class="footer-nav">
+            <ul>
+            <li><a href="#">Melata</a></li>
+            <li><a href="#">Report URL</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>  
+</body>
+</html>
