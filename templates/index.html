@@ -1,0 +1,109 @@
+
+{% extends 'base.html' %}
+    {% block content %} 
+    <div class="container">
+        <h1>FREE URL SHORTENER</h1>
+        <p>Melata is a free URL shortening tool, Make memorable, brief links in a matter of seconds.</p>
+
+        <div class="content">
+            <form method="POST" action="{{ url_for('main.add_link') }}">
+                    <input type="text" name="original_url" placeholder="Enter link here" />
+                    <input type="submit" value="submit url"/>
+           </form>
+        </div>
+    </div>
+
+
+    <main>
+    <div class="middle-box">
+        <h1> Want More?</h1>
+        <h3> Create Account to Enjoy <br>Premium Features for free :)</h3>
+        <p>Powerful Dashboard, Detailed analytics, Api , QR Codes,   Browser extension,  app integrations and support. </p>
+        <a href="{{ url_for('auth.signup') }}"><input type="button" value="Create Account" /></a>
+
+        <div class="middle-box2">
+
+            <p>
+             Melata is a Free URL Shortener for creating attractive, recognizable, 
+             and trackable short URLs from long, unsightly links. Use it to shorten 
+             links that you wish to post on any social media sites, blogs, SMS, 
+             emails, advertisements, or pretty much anywhere else. Videos, emails, SMS,
+              Twitter, Facebook, YouTube, Instagram, and WhatsApp. The finest free substitute
+              for popular URL shorteners like bitly and tinyurl is Melata.
+             Check the number of clicks the URL obtained after being shortened.
+                </p>
+        </div>
+    </div>
+
+
+
+    <div class="sectionAddons">
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/click.png') }}" alt="" width="75px" height="75px" />
+            <h2>Easy</h2>
+            <p>
+                Melata is easy an fast just enter the long link to receive your abbreviated link quickly and easily.
+            </p>
+        </div>
+
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/link.png') }}" alt="" width="75px" height="75px" />
+            <h2>Shortened</h2>
+            <p>
+                Use any link; melata always shortens, regardless of size.
+            </p>
+        </div>
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/encrypted.png') }}" alt="" width="75px" height="75px" />
+            <h2>Secure</h2>
+            <p>
+                it is fast and secure
+            </p>
+        </div>
+
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/pie-chart.png') }}" alt="" width="75px" height="75px" />
+            <h2>Statistics</h2>
+            <p>
+             Check the amount of clicks that your shortened url recieved
+            </p>
+        </div>
+
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/responsive.png') }}" alt="" width="75px" height="75px" />
+            <h2>Devices</h2>
+            <p>
+                Compatible with smartphones, tablets and desktop
+            </p>
+        </div>
+
+        <div class="addons_content">
+            <img src="{{ url_for('static', filename='images/reliability.png') }}" alt="" width="75px" height="75px" />
+            <h2>Reliable</h2>
+            <p>
+                All links that try to disseminate spam, viruses and malware are deleted
+            </p>
+        </div>
+
+    </div>
+
+
+
+   
+
+
+   
+
+        
+
+   
+
+</main>
+
+
+{% endblock %}

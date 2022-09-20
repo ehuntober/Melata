@@ -1,0 +1,79 @@
+
+{% extends 'base.html' %}
+{% block content %} 
+
+<div class="main-board">
+   
+
+    <h6>{{ name }}, It's nice to have you here &#128512;</h6>
+
+    <div class="dashboard-content">
+
+    <div class="section-one">
+
+       <div class="box-one">
+        <p> you can now shorten your link below,
+            convert them to QR code and view how many people who click your link. </p>
+
+       <form method="POST" action="{{ url_for('main.add_link2') }}">
+       <input type="text" name="original_url" placeholder="Enter link here" />
+       <input type="submit" value="Submit URL"/>
+       </form>
+
+        </div>
+
+
+      <div class="box-two">
+      <h1>Your Shortned URL</h1>
+      <p>Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
+
+        <form onsubmit = "event.preventDefault();">
+        
+       <input type="text" placeholder="Enter link here" value="{{ url_for('main.redirect_to_url2', short_url_user = new_link, _external=True) }}" id="myInput"/>
+       <input type="submit" value="COPY URL" onclick="myFunction()"  id="copybtn" />
+       </form>
+       </div>
+
+    </div>
+
+
+   <div class="section-two">
+
+       <div class="Total-stats">
+        <h2>Stats</h2>
+        <p> <span>0</span> Clicks</p>
+       </div>
+
+
+       <div class="stats-adons">
+
+        <div class="stats-two">
+       <p> List of Shorten links <a href="#"> <br>
+              Click here</a></p>
+      </div>
+
+   
+       <div class="url-box">
+      <h2> Enter an URL to convert to QR Code</h2>
+       <form action="/generate" method="POST">
+        <input type="text" placeholder="Enter an URL" />
+        <input type="submit" value="Submit URL"/>
+        
+         </form>
+        </div>
+
+
+
+
+         </div>
+    </div>
+
+
+   </div>
+
+
+</div>
+{% endblock %}
+
+
+
