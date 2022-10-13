@@ -27,3 +27,5 @@ Visit localhost:
 Voila!, your web app is now powered up
 
 Live link: https://melata.onrender.com
+
+![My Remote Image](https://github.com/ehuntober/Melata/blob/main/screenshot/Melata2.jpeg)
