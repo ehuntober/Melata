@@ -13,4 +13,17 @@
 -  app integrations and support.
 
 # HOW TO RUN
-`hsl(212, 92%, 45%) HELLO WORLD`
+> Fork and Clone the Repository to your Local Machine
+
+> Create a virtual env
+
+> install all dependencies from the `requirement.txt`
+
+> Navigate to the parent folder
+> Then run python app.py
+
+Visit localhost:
+
+Voila!, your web app is now powered up
+
+Live link: https://melata.onrender.com
