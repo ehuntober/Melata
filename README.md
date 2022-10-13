@@ -13,4 +13,4 @@
 -  app integrations and support.
 
 # HOW TO RUN
-`#RRGGBB` KELE `#RRGGBB`
+`hsl(212, 92%, 45%) HELLO WORLD`
